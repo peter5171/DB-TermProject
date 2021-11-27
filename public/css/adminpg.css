@@ -18,7 +18,6 @@ body {
 }
 .bgi {
   width: 1310px;
-  height: 700px;
   background: white;
 }
 .style0 {
@@ -26,7 +25,18 @@ body {
   margin-top: 1.5rem;
   left: 250px;
 }
-
+.search {
+  float: left;
+  width: 553px;
+  height: 30px;
+  margin-top: 1.5rem;
+  border-radius: 40px;
+  border-color: black;
+  margin-left: 3rem;
+}
+.search:focus {
+  outline: none;
+}
 .button {
   position: relative;
   top: 30px;
@@ -43,7 +53,16 @@ body {
   width: 294px;
   height: 225px;
 }
-
+.sym {
+  font-size: 25px;
+}
+.member {
+  display: flex;
+  float: left;
+  margin-left: 2.8rem;
+  width: 1150px;
+  height: 200px;
+}
 .top-page {
   display: flex;
   float: left;
@@ -60,6 +79,75 @@ body {
   width: 1192px;
   height: 80px;
   background-color: #aa9166;
+}
+.cate {
+  width: 35%;
+  background-color: #aa9166;
+  color: black;
+  padding: 40px 0px 20px 5px;
+  font-weight: 800px;
+  font-size: 18px;
+  line-height: 5px;
+}
+.best {
+  display: flex;
+  width: 40%;
+  height: 80px;
+  float: left;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 92px;
+}
+
+.best-item {
+  margin-right: 20px;
+  width: 400px;
+  height: 80px;
+}
+.best-item:hover {
+  background-color: #deb887;
+}
+.log {
+  display: flex;
+  float: right;
+  width: 30%;
+  height: 80px;
+  margin: 0px 0px 0px 195px;
+  padding: 0px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: 500;
+  color: grey;
+  line-height: 93px;
+  text-align: center;
+}
+.logostyle {
+  float: left;
+  width: 100px;
+  height: 78px;
+  margin-left: 0rem;
+}
+.login-cont {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 29px;
+}
+
+.login {
+  margin-left: 21rem;
+  margin-top: 7rem;
+  float: left;
+  width: 450px;
+}
+
+.login-input {
+  margin-top: 15px;
+  float: left;
+}
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 fieldset {
@@ -94,7 +182,7 @@ table {
   text-indent: initial;
   margin: 0;
   padding: 0;
-  font-family: "굴림", Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
+  font-family: '굴림', Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
     Sans-serif;
   font-size: 12px;
   color: #000;
@@ -132,7 +220,7 @@ td {
   margin-left: 10px;
   margin: 0;
   padding: 0;
-  font-family: "굴림", Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
+  font-family: '굴림', Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
     Sans-serif;
   font-size: 12px;
   color: #000;
@@ -143,7 +231,7 @@ td {
   display: flex;
   margin: 0 0 0 170px;
   height: 25px;
-  font-family: "굴림", Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
+  font-family: '굴림', Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
     Sans-serif;
   font-size: 15px;
   color: #000;
@@ -179,7 +267,7 @@ button {
   width: 1200px;
   height: 210px;
   position: relative;
-  margin-top: 1px;
+  margin-top: 225px;
   background: #121518;
   color: #ffffff;
 }

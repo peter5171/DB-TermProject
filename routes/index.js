@@ -1,6 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import passport from 'passport';
+import { ensureLoggedOut } from 'connect-ensure-login';
 
 import { runInsert } from '../lib/user';
 
@@ -16,24 +17,28 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/signin', (req, res) => {
+router.get('/signin', ensureLoggedOut({ redirectTo: '/' }), (req, res) => {
   res.render('signin', { title: 'Express' });
 });
 
-router.post('/signin', async (req, res) => {
-  const { name, username, password, tel, card } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
+router.post(
+  '/signin',
+  ensureLoggedOut({ redirectTo: '/' }),
+  async (req, res) => {
+    const { name, username, password, tel, card } = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-  runInsert('INSERT INTO 회원 VALUES (:1, :2, :3, DEFAULT, :4, :5)', [
-    username,
-    name,
-    tel,
-    card,
-    hashedPassword,
-  ]);
-});
+    runInsert('INSERT INTO 회원 VALUES (:1, :2, :3, DEFAULT, :4, :5)', [
+      username,
+      name,
+      tel,
+      card,
+      hashedPassword,
+    ]);
+  }
+);
 
-router.get('/login', (req, res) => {
+router.get('/login', ensureLoggedOut({ redirectTo: '/' }), (req, res) => {
   res.render('login', {
     title: 'Express',
   });
@@ -41,6 +46,7 @@ router.get('/login', (req, res) => {
 
 router.post(
   '/login',
+  ensureLoggedOut({ redirectTo: '/' }),
   passport.authenticate('local', {
     successReturnToOrRedirect: '/',
     failureRedirect: '/login',
@@ -53,4 +59,4 @@ router.post(
   }
 );
 
-module.exports = router;
+export default router;

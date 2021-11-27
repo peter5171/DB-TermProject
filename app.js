@@ -10,7 +10,7 @@ import passport from 'passport';
 import passportConfig from './lib/passport';
 
 import indexRouter from './routes/index';
-import usersRouter from './routes/users';
+import adminRouter from './routes/admin';
 
 var app = express();
 
@@ -37,7 +37,7 @@ app.use(passport.session());
 passportConfig();
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

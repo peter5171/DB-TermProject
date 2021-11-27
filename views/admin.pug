@@ -1,0 +1,41 @@
+extends layout 
+
+mixin userInfo(username, name, rank)
+  <tr>
+    <th scope="row">아이디</th>
+    <td>
+      <div class="infor" id="mnum">#{username}</div>
+    </td>
+    <th scope="row">이름</th>
+    <td>
+      <div class="infor" id="mname">#{name}</div>
+    </td>
+    <th scope="row">회원등급</th>
+    <td>
+      form(method="post")
+        input(type="hidden", value=username, name="username")
+        select(name="rank").infor#mid
+          option(value="VIP", selected=rank === "VIP") VIP
+          option(value="GOLD", selected=rank === "GOLD") GOLD
+          option(value="SILVER", selected=rank === "SILVER") SILVER
+        .pot-left
+          button(type="submit")#bt_chnname.chn_bt 수정
+    </td>
+  </tr>
+
+block head
+  link(rel="stylesheet", href="/css/adminpg.css")
+
+block content
+  <div class="tb-space">
+    <from>
+      <fieldset>
+        <legend>회원정보</legend>
+        <table cellspacing="0">
+          <tbody>
+            +userInfo('asdf', 'ㅁㄴㄹ', 'GOLD')
+          </tbody>
+        </table>
+      </fieldset>
+    </from>
+  </div>
