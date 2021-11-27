@@ -1,0 +1,133 @@
+#header {
+  width: 100%;
+  height: 202px;
+}
+
+#nav {
+  float: left;
+  width: 9.5%;
+  height: 494px;
+}
+
+#content {
+  float: right;
+  width: 90.5%;
+  height: 494px;
+}
+
+#footer {
+  width: 100%;
+  height: 250px;
+  clear: both;
+}
+
+#shopping_cart {
+  width: 95%;
+  height: 250px;
+  padding: 10px;
+  border: 1px dotted red;
+}
+.search {
+  float: left;
+  width: 553px;
+  height: 30px;
+  margin-top: 3rem;
+  border-radius: 40px;
+}
+.search:focus {
+  outline: none;
+}
+
+.sym {
+  font-size: 25px;
+}
+
+.style0 {
+  position: relative;
+  margin-top: 1.5rem;
+  left: 305px;
+}
+
+.style1 {
+  float: left;
+  width: 240px;
+}
+.style2 {
+  float: left;
+  width: 294px;
+  height: 225px;
+}
+
+.list {
+  list-style: none;
+  margin-left: -17px;
+  margin-top: 8px;
+  float: left;
+}
+.member {
+  display: flex;
+  float: left;
+  margin-left: 3rem;
+  width: 100%;
+}
+.cate {
+  background-color: white;
+  color: black;
+  padding: 20px 65px 15px 20px;
+  font-weight: 800px;
+  font-size: 18px;
+}
+.best {
+  display: flex;
+  float: left;
+  margin: 30px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+}
+.best-item {
+  margin-right: 20px;
+}
+.cat {
+  width: 40px;
+  height: 25px;
+}
+.log {
+  display: flex;
+  float: right;
+  margin: 30px 0px 0px 255px;
+  font-size: 14px;
+  font-weight: 500;
+  color: grey;
+}
+.list {
+  list-style: none;
+  margin-left: -48px;
+  margin-top: 0px;
+  float: left;
+}
+
+.button {
+  position: relative;
+  top: 55px;
+  left: -40px;
+  width: 22px;
+}
+
+li {
+  width: 145px;
+  padding: 14px 0px 14px 19px;
+  margin-left: 1rem;
+  border: solid 1px gray;
+}
+
+.stuff {
+  float: left;
+}
+
+.member {
+  display: flex;
+  float: left;
+  margin-left: 3rem;
+  width: 100%;
+}

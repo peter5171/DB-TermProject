@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/login.css" />
+    <style>
+        body {
+            height: 100%;
+            background-color: white;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+
+        input {
+            display: inline-block;
+            border: 0.1rem inset black;
+            width: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="bgi">
+            <div>
+                <div class="top-page">
+                    <a href="./main.html">
+                        <img class="logostyle" src="./image/logo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="statusbox"></div>
+        <h2 class="logtxt">
+            <span style="display: block">시간표</span>
+        </h2>
+    </div>
+    <div class="logtxt">
+        <from method="post" action="process.jsp">
+            <fieldset>
+                <legend>시간표정보입력</legend>
+                <label for="mvnum">영화번호
+                </label>
+                <input type="text" name="mvnum" /><br />
+                <label for="name">상영시간</label>
+                <input type="text" name="mvtime" /><br />
+                <label for="name">상영관번호</label>
+                <input type="text" name="teanum" id="mvpd"><br />
+                <label for="actor">금액</label>
+                <input type="text" name="cost" id="cost" /><br /><br />
+                <div class="quit-page"><button id="add_bt" type="button" class="ok-bt">추가</button></div>
+            </fieldset>
+        </from>
+    </div>
+    <br><br><br /><br /><br />
+    <div class="footer"></div>
+</body>
+</html>

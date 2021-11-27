@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/login.css" />
+    <style>
+        body {
+            height: 100%;
+            background-color: white;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+
+        input {
+            display: inline-block;
+            border: 0.1rem inset black;
+            width: 160px;
+        }
+    </style>
+    <script>
+        function duplicationCheck() {
+            var users = ["peter", "name2", "name3"];
+            var userId = document.getElementById("userId").value;
+            for (var i = 0; i < users.length; i++) {
+                if (userId == users[i]) {
+                    document.getElementById("userId").value = "";
+                    return alert(userId + "는 존재하는 아이디 입니다.");
+                }
+            }
+            alert("사용 가능한 아이디입니다.");
+        }
+
+        function test() {
+            const p1 = document.getElementById('password1').value;
+            const p2 = document.getElementById('password2').value;
+            const em = document.getElementById('error');
+            if (p1.length < 6) {
+                em.innerHTML = "입력한 글자가 6글자 이상이어야 합니다."; //에러 메세지 출력
+                return false;
+            }
+
+            if (p1 != p2) {
+                em.innerHTML = "비밀번호가 일치 하지 않습니다";
+                return false;
+            } else {
+                em.innerHTML = "비밀번호가 일치합니다";
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="bgi">
+            <div>
+                <div class="top-page">
+                    <a href="./main.html">
+                        <img class="logostyle" src="./image/logo.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="statusbox"></div>
+        <h2 class="logtxt">
+            <span style="display: block">회원가입</span>
+        </h2>
+    </div>
+    <div class="logtxt">
+        <from method="post" action="process.jsp">
+            <fieldset>
+                <legend>회원정보입력</legend>
+                <label for="name">이름</label>
+                <input type="text" name="name" /><br />
+                <label for="name">아이디</label>
+                <input type="text" name="name" id="userId">
+                <input type="button" value="중복검사" onclick="duplicationCheck()" /><br />
+                <label for="password1">비밀번호</label>
+                <input type="password" name="password1" vlaue="" id="password1" /><br />
+                <label for="password2">비밀번호 확인</label>
+                <input type="password" name="password2" vlaue="" id="password2" onchange="test()" />
+                <p id="error"></p>
+                <label for="tel">휴대폰 번호</label>
+                <input type="text" name="tel" /><br />
+                <label for="card">카드번호</label>
+                <input type="text" name="card" /><br />
+            </fieldset>
+        </from>
+    </div>
+    <br><br>
+    <div class="footer"></div>
+</body>
+</html>

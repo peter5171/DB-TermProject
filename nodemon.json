@@ -1,0 +1,4 @@
+{
+    "exec":"babel-node bin/www.js",
+    "ignore": ["public/*"]
+}
