@@ -1,15 +1,126 @@
+#header {
+  width: 100%;
+  height: 202px;
+}
+
+#nav {
+  float: left;
+  width: 9.5%;
+  height: 494px;
+}
+html {
+  width: 1310px;
+  height: 700px;
+}
+body {
+  width: 1310px;
+  height: 700px;
+}
 .bgi {
   width: 1310px;
-  height: 100px;
   background: white;
+}
+.style0 {
+  position: relative;
+  margin-top: 1.5rem;
+  left: 250px;
+}
+.search {
+  float: left;
+  width: 553px;
+  height: 30px;
+  margin-top: 1.5rem;
+  border-radius: 40px;
+  border-color: black;
+  margin-left: 3rem;
+}
+.search:focus {
+  outline: none;
+}
+.button {
+  position: relative;
+  top: 30px;
+  left: -40px;
+  width: 22px;
+}
+.style1 {
+  float: left;
+  width: 100px;
+  margin-left: 1.2rem;
+}
+.style2 {
+  float: left;
+  width: 294px;
+  height: 225px;
+}
+.sym {
+  font-size: 25px;
+}
+.member {
+  display: flex;
+  float: left;
+  margin-left: 2.8rem;
+  width: 1150px;
+  height: 200px;
 }
 .top-page {
   display: flex;
   float: left;
   margin-left: 2.8rem;
   width: 1192px;
-  height: 100px;
+  height: 200px;
+  height: 80px;
   background-color: black;
+}
+.head-css {
+  display: flex;
+  float: left;
+  margin-left: 2.8rem;
+  width: 1192px;
+  height: 80px;
+  background-color: #aa9166;
+}
+.cate {
+  width: 35%;
+  background-color: #aa9166;
+  color: black;
+  padding: 40px 0px 20px 5px;
+  font-weight: 800px;
+  font-size: 18px;
+  line-height: 5px;
+}
+.best {
+  display: flex;
+  width: 40%;
+  height: 80px;
+  float: left;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 92px;
+}
+
+.best-item {
+  margin-right: 20px;
+  width: 400px;
+  height: 80px;
+}
+.best-item:hover {
+  background-color: #deb887;
+}
+
+.log {
+  display: flex;
+  float: right;
+  width: 30%;
+  height: 80px;
+  margin: 0px 0px 0px 195px;
+  padding: 0px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: 500;
+  color: grey;
+  line-height: 93px;
+  text-align: center;
 }
 .logostyle {
   float: left;
@@ -86,10 +197,6 @@
   margin-left: 2.8rem;
   width: 1192px;
 }
-.style1 {
-  width: 145px;
-  height: 36px;
-}
 
 .id {
   width: 42px;
@@ -103,7 +210,7 @@
 
 h2 {
   color: #676767;
-  font-family: dotum, "돋움", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: dotum, '돋움', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 input {

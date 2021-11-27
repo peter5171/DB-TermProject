@@ -3,5 +3,29 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    block head
   body
+    .bgi
+      .top-page
+        a(href="/main.html")
+          img(src="/image/logo.png", alt="mainImg").style1
+        div
+          input(type="text", name="search", size="50").search
+
+      .head-css
+        .cate
+          strong.sym ≡
+          | 전체 카테고리
+        .best
+          .best-item 영화정보
+          .best-item 상영관정보
+          .best-item 영화예매
+          .best-item 상영스케줄
+        .log
+          .best-item
+            a(href="login.html") 로그인 |
+          .best-item
+            a(href="singin.html") 회원가입 |
+          .best-item
+            a(href="mypage.html") 마이페이지
     block content

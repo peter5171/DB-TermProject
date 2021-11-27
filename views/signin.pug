@@ -1,0 +1,32 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/css/login.css")
+  link(rel="stylesheet", href="/css/signin.css")
+
+block content
+  .logtxt
+    form(method="post")
+      fieldset
+        label(for="name") 이름
+        input(type="text", name="name")#name
+        br
+        label(for="username") 아이디
+        input(type="text", name="username")#username
+        br
+        label(for="password") 비밀번호
+        input(type="text", name="password")#password
+        br
+        label(for="tel") 휴대폰 번호
+        input(type="text", name="tel")#tel
+        br
+        label(for="card") 카드번호
+        input(type="text", name="card")#card
+        br
+        button(type="submit") 제출
+
+  </div>
+  <br /><br />
+  <div class="footer"></div>
+
+
