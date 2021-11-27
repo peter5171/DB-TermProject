@@ -1,8 +1,13 @@
+require('dotenv').config();
 import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import session from 'express-session';
+import passport from 'passport';
+
+import passportConfig from './lib/passport';
 
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
@@ -18,6 +23,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  session({
+    secret: process.env.SESSION_KEY,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passportConfig();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

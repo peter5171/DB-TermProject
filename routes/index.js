@@ -1,5 +1,8 @@
-var express = require('express');
-const { runInsert } = require('../lib/user');
+import express from 'express';
+import bcrypt from 'bcrypt';
+import passport from 'passport';
+
+import { runInsert } from '../lib/user';
 
 var router = express.Router();
 
@@ -17,13 +20,37 @@ router.get('/signin', (req, res) => {
   res.render('signin', { title: 'Express' });
 });
 
-router.post('/signin', (req, res) => {
+router.post('/signin', async (req, res) => {
   const { name, username, password, tel, card } = req.body;
+  const hashedPassword = await bcrypt.hash(password, 10);
 
-  runInsert(
-    'INSERT INTO 회원 VALUES (AUTO_INCREMENT_USER.nextval, :1, :2, DEFAULT, :3, :4, :5)',
-    [name, tel, card, username, password]
-  );
+  runInsert('INSERT INTO 회원 VALUES (:1, :2, :3, DEFAULT, :4, :5)', [
+    username,
+    name,
+    tel,
+    card,
+    hashedPassword,
+  ]);
 });
+
+router.get('/login', (req, res) => {
+  res.render('login', {
+    title: 'Express',
+  });
+});
+
+router.post(
+  '/login',
+  passport.authenticate('local', {
+    successReturnToOrRedirect: '/',
+    failureRedirect: '/login',
+  }),
+  (req, res) => {
+    console.log(req.body);
+    res.render('login', {
+      title: 'Express',
+    });
+  }
+);
 
 module.exports = router;
