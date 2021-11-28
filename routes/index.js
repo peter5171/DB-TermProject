@@ -10,6 +10,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res) => {
+  if (req.user && req.user.admin) return res.redirect('/admin');
   res.render('index', {
     title: 'Express',
     loggedIn: req.user ? true : false,

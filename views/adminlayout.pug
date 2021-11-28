@@ -15,20 +15,13 @@ html
       .head-css
         .best
           .best-item
-            a(href="/viewmv") 영화정보
-          .best-item 상영관정보
-          .best-item 영화예매
+            a(href="/admin") 회원정보수정
+          .best-item 
+            a(href="/admin/movie") 영화관리
           .best-item 
             a(href="/viewschedule") 상영스케줄
+
         .log
-          if !loggedIn
-            .best-item
-              a(href="/login") 로그인
-            .best-item
-              a(href="/signin") 회원가입
-          if loggedIn
-            .best-item
-              a(href="/logout") 로그아웃
-            .best-item
-              a(href="/mypage") 마이페이지
+          .best-item
+            a(href="/logout") 로그아웃
     block content
