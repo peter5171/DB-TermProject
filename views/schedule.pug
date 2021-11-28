@@ -1,0 +1,28 @@
+extends layout
+mixin scheduleInfo(mvnum, mvtime, teanum, cost)
+  tr
+    th(scope="row") 영화번호
+    td
+      .infor(id="mvnum") #{mvnum}
+    th(scope="row") 상영시간
+    td
+      .infor(id="mvtime") #{mvtitle}
+    th(scope="row") 상영관번호
+    td
+      .infor(id="teanum") #{teanum}
+    th(scope="row") 요금
+    td
+      .infor(id="cost") #{cost}
+block head
+  link(rel="stylesheet", href="/css/insert.css")
+
+block content
+  h2 영화 시간표
+      div
+        .tb-space
+          fieldset
+            legend 시간표
+              table
+                tbody
+                  +scheduleInfo(1000,"10:00","1관","12000원")
+                  +scheduleInfo(1001,"10:00","2관","12000원")

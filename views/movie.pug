@@ -1,0 +1,36 @@
+extends layout
+
+mixin movieInfo(poster, mvnum, mvtitle, mvpd, actor)
+  tr
+    th(scope="row") 포스트
+    td
+      .infor(id="poster")
+        img(src="#{poster}").imgsize
+    th(scope="row") 영화번호
+    td
+      .infor(id="mvnum") #{mvnum}
+    th(scope="row") 제목
+    td
+      .infor(id="mvtitle") #{mvtitle}
+    th(scope="row") 감독
+    td
+      .infor(id="mvpd") #{mvpd}
+    th(scope="row") 주연배우
+    td
+      .infor(id="actor") #{actor}
+
+block head
+  link(rel="stylesheet", href="/css/insert.css")
+
+block content
+    h2 영화 목록
+      div
+        .tb-space
+          fieldset
+            legend 영화정보
+              table
+                tbody
+                  +movieInfo("/image/eternals.jpg", 1000, "이터널스", "클로이 지오", "마동석")
+                  +movieInfo("/imageromence/.jpg", 1001, "장르만 로맨스", "조은지", "류승룡")
+              
+      

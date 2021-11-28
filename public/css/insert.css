@@ -15,16 +15,37 @@ html {
 body {
   width: 1310px;
   height: 700px;
+  background-color: white;
+}
+label {
+  display: inline-block;
+  width: 120px;
+}
+input {
+  display: inline-block;
+  border: 0.1rem inset black;
+  width: 160px;
 }
 .bgi {
   width: 1310px;
-  height: 700px;
   background: white;
 }
 .style0 {
   position: relative;
   margin-top: 1.5rem;
   left: 250px;
+}
+.search {
+  float: left;
+  width: 553px;
+  height: 30px;
+  margin-top: 1.5rem;
+  border-radius: 40px;
+  border-color: black;
+  margin-left: 3rem;
+}
+.search:focus {
+  outline: none;
 }
 
 .button {
@@ -43,7 +64,45 @@ body {
   width: 294px;
   height: 225px;
 }
+.sym {
+  font-size: 25px;
+}
+.head-css {
+  display: flex;
+  float: left;
+  margin-left: 2.8rem;
+  width: 1192px;
+  height: 80px;
+  background-color: #aa9166;
+}
+.cate {
+  width: 35%;
+  background-color: #aa9166;
+  color: black;
+  padding: 40px 0px 20px 5px;
+  font-weight: 800px;
+  font-size: 18px;
+  line-height: 5px;
+}
+.best {
+  display: flex;
+  width: 40%;
+  height: 80px;
+  float: left;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 92px;
+}
 
+.best-item {
+  margin-right: 20px;
+  width: 400px;
+  height: 80px;
+}
+.best-item:hover {
+  background-color: #deb887;
+}
 .top-page {
   display: flex;
   float: left;
@@ -61,7 +120,15 @@ body {
   height: 80px;
   background-color: #aa9166;
 }
-
+.top-page {
+  display: flex;
+  float: left;
+  margin-left: 2.8rem;
+  width: 1192px;
+  height: 200px;
+  height: 80px;
+  background-color: black;
+}
 fieldset {
   display: block;
   margin-inline-start: 2px;
@@ -198,6 +265,7 @@ button {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 .imgsize {
   width: 100px;
@@ -208,4 +276,23 @@ a {
 }
 .mvtm_bt {
   margin-left: 1110px;
+}
+
+.cat {
+  line-height: 110px;
+  width: 40px;
+  height: 25px;
+}
+.log {
+  display: flex;
+  float: right;
+  width: 30%;
+  height: 80px;
+  margin: 0px 0px 0px 195px;
+  padding: 0px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  line-height: 93px;
+  text-align: center;
 }

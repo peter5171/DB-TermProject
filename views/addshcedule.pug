@@ -1,0 +1,27 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/css/login.css")
+
+block content
+  .logtxt
+    form(method="post")
+      fieldset
+        legend 시간표 입력
+        brbrbr
+          div
+            label(for="mvnum") 영화번호
+            input(type="text", name="mvnum")#name.input
+            br
+            label(for="mvtime") 상영시간
+            input(type="text", name="mvtime")#username.input
+            br
+            label(for="teanum") 상영관번호
+            input(type="password", name="teanum")#password.input
+            br
+            label(for="cost") 금액
+            input(type="text", name="cost")#tel.input
+            br
+            button(type="submit") 추가
+            br
+    <div class="footer"></div>

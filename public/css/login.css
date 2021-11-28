@@ -166,8 +166,7 @@ body {
 }
 
 .input {
-  float: left;
-  width: 200px;
+  width: 100px;
   height: 20px;
   background: url(//pics.gmarket.co.kr/pc/ko/expire/challenge/neo_image/login_img/201112/input_off_right.gif)
     no-repeat 100% 0;
@@ -210,7 +209,7 @@ body {
 
 h2 {
   color: #676767;
-  font-family: dotum, '돋움', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: dotum, "돋움", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 input {

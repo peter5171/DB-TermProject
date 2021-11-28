@@ -1,0 +1,25 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="/css/login.css")
+
+block content
+  .logtxt
+    form(method="post")
+      fieldset
+        legend 영화정보입력
+        brbrbr
+          div
+            label(for="name") 포스터
+            input(type="text", name="name")#name.input
+            br
+            label(for="username") 영화제목
+            input(type="text", name="username")#username.input
+            br
+            label(for="password") 감독
+            input(type="password", name="password")#password.input
+            br
+            label(for="tel") 주연배우
+            input(type="text", name="tel")#tel.input
+            br
+            button(type="submit") 추가
