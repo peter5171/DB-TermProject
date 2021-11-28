@@ -17,10 +17,12 @@ html
           strong.sym ≡
           | 전체 카테고리
         .best
-          .best-item 영화정보
+          .best-item
+            a(href="/viewmv") 영화정보
           .best-item 상영관정보
           .best-item 영화예매
-          .best-item 상영스케줄
+          .best-item 
+            a(href="/viewschedule") 상영스케줄
         .log
           if !loggedIn
             .best-item

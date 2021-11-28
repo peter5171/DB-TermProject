@@ -1,7 +1,7 @@
 extends layout
 
 block head
-  link(rel="stylesheet", href="/css/login.css")
+  link(rel="stylesheet", href="/css/addmovie.css")
 
 block content
   .logtxt
@@ -11,17 +11,21 @@ block content
         brbrbr
           div
             label(for="mvnum") 영화번호
-            input(type="text", name="mvnum")#name.input
+            input(type="text", name="mvnum")#mvnum.input
+            br
             br
             label(for="mvtime") 상영시간
-            input(type="text", name="mvtime")#username.input
+            input(type="text", name="mvtime")#mvtime.input
+            br
             br
             label(for="teanum") 상영관번호
-            input(type="password", name="teanum")#password.input
+            input(type="text", name="teanum")#teanum.input
+            br
             br
             label(for="cost") 금액
-            input(type="text", name="cost")#tel.input
+            input(type="text", name="cost")#cost.input
+            br
             br
             button(type="submit") 추가
             br
-    <div class="footer"></div>
+            br
