@@ -6,7 +6,7 @@ mixin scheduleInfo(mvnum, mvtime, teanum, cost)
       .infor(id="mvnum") #{mvnum}
     th(scope="row") 상영시간
     td
-      .infor(id="mvtime") #{mvtime}
+      .infor(id="mvtime")= `${mvtime.getFullYear()}-${(mvtime.getMonth() + 1)}-${mvtime.getDate()} ${mvtime.getHours()}:${mvtime.getMinutes()}`
     th(scope="row") 상영관번호
     td
       .infor(id="teanum") #{teanum}
@@ -21,7 +21,7 @@ block content
     .tb-space
       fieldset
         legend 시간표
-          table
-            tbody
-              each schedule in schedules
-                +scheduleInfo(schedule.영화번호,schedule.상영시간,schedule.상영관번호,schedule.요금)       
+        table
+          tbody
+            each schedule in schedules
+              +scheduleInfo(schedule.영화번호,schedule.상영시간,schedule.상영관번호,schedule.요금)       

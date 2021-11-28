@@ -8,24 +8,27 @@ block content
     form(method="post")
       fieldset
         legend 시간표 입력
-        brbrbr
-          div
-            label(for="mvnum") 영화번호
-            input(type="text", name="mvnum")#mvnum.input
-            br
-            br
-            label(for="mvtime") 상영시간
-            input(type="text", name="mvtime")#mvtime.input
-            br
-            br
-            label(for="teanum") 상영관번호
-            input(type="text", name="teanum")#teanum.input
-            br
-            br
-            label(for="cost") 금액
-            input(type="text", name="cost")#cost.input
-            br
-            br
-            button(type="submit") 추가
-            br
-            br
+        div
+          label(for="mvnum") 영화번호
+          input(type="text", name="mvnum", value=id, disabled)#mvnum.input
+          br
+          br
+          label(for="mvdate") 상영날짜
+          input(type="date", name="mvdate", value = new Date().toISOString().substring(0, 10))#mvdate.input
+          br
+          br
+          label(for="mvtime") 상영시간
+          input(type="time", name="mvtime")#mvtime.input
+          br
+          br
+          label(for="teanum") 상영관번호
+          input(type="text", name="teanum")#teanum.input
+          br
+          br
+          label(for="cost") 금액
+          input(type="text", name="cost")#cost.input
+          br
+          br
+          button(type="submit") 추가
+          br
+          br

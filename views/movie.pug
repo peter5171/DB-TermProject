@@ -5,7 +5,7 @@ mixin movieInfo(mvnum, title, director, actor, poster)
     th(scope="row") 포스트
     td
       .infor(id="poster")
-        img(src="/image/romence").imgsize
+        img(src="/poster/" + mvnum).imgsize
     th(scope="row") 영화번호
     td
       .infor(id="mvnum") #{mvnum}
@@ -18,6 +18,9 @@ mixin movieInfo(mvnum, title, director, actor, poster)
     th(scope="row") 주연배우
     td
       .infor(id="actor") #{actor}
+    td
+      a(href="/admin/addschedule/" + mvnum)
+        button 시간 추가
 
 block head
   link(rel="stylesheet", href="/css/insert.css")
@@ -27,8 +30,9 @@ block content
         .tb-space
           fieldset
             legend 영화정보
-              table
-                tbody
-                  each movie in movies
-                    +movieInfo( movie.영화번호, movie.영화제목 , movie.영화감독, movie.주연배우,"/image/eternals.jpg")
-        button(href="/addmovie") 추가
+            table
+              tbody
+                each movie in movies
+                  +movieInfo( movie.영화번호, movie.영화제목 , movie.영화감독, movie.주연배우,"/image/eternals.jpg")
+            a(href='/admin/addmovie')
+              button 추가
