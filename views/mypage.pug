@@ -11,33 +11,48 @@ block content
       
       form(method="post")
         table(cellspacing="0")
+          input(type="hidden", value=user.아이디, name="username")
           tbody
-            tr
-              th(scope="row") 이름
-              td
-                input(value="이*재").infor
             tr
               th(scope="row") 아이디
               td
-                input(value="이*재").infor
+                .infor= user.아이디
+            tr
+              th(scope="row") 비밀번호
+              td
+                input(name="password").infor
+            tr
+              th(scope="row") 이름
+              td
+                input(value=user.회원이름, name="name").infor
+            
             tr
               th(scope="row") 전화번호
               td
-                input(value="이*재").infor
+                input(value=user.휴대전화, name="tel").infor
             tr
               th(scope="row") 카드번호
               td
-                input(value="이*재").infor
+                input(value=user.카드번호, name="card").infor
             tr
               th(scope="row") 등급
               td
-                .infor SILVER
+                .infor= user.등급
             tr
               th(scope="row") 할인율
               td
-                .infor 10%
+                .infor #{user.할인율}%
         
-        .quit
+        .buttonBlock
+          button(type="button")#delete.chnbt 회원탈퇴
           button(type="submit").chnbt 수정
-          button(type="button").chnbt 회원탈퇴
+          
   .footer
+  script.
+    const deleteButton = document.getElementById('delete');
+    deleteButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      fetch('/mypage/delete', {method: 'post'}).then((result) => {
+        window.location.href = '/'
+      })
+    })

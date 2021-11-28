@@ -3,12 +3,21 @@ import bcrypt from 'bcrypt';
 import passport from 'passport';
 import { ensureLoggedOut } from 'connect-ensure-login';
 
-import { runInsert } from '../lib/user';
+import { runInsert, runSelect } from '../lib/db';
 
 var router = express.Router();
 
-router.get('/', (req, res) => {
-  res.render('admin', { title: 'Express' });
+router.get('/', async (req, res) => {
+  const users = await runSelect('SELECT 아이디, 회원이름, 등급 FROM 회원', []);
+
+  res.render('admin', { title: 'Express', users });
+});
+
+router.post('/', (req, res) => {
+  const { username, rank } = req.body;
+
+  runInsert('UPDATE 회원 SET 등급 = :1 WHERE 아이디 = :2', [rank, username]);
+  res.redirect('/admin');
 });
 
 router.get('/movie', (req, res) => {
@@ -24,12 +33,13 @@ router.get('/addmovie', (req, res) => {
 });
 
 router.post('/addmovie', async (req, res) => {
-  const { poster, mvnum, mvtitle, mvpd, actor } = req.body;
-
+  const { title, director, actor } = req.body;
+  console.log(title, director, actor, req.files.poster.data);
   runInsert(
-    'INSERT INTO 영화 VALUES (:1,AUTO_INCRSEMENT_MOVIE.nextvalue , :2, :3, :4)',
-    [poster, mvtitle, mvpd, actor]
+    'INSERT INTO 영화 VALUES (AUTO_INCREMENT_MOVIE.nextval, :1, :2, :3, :4)',
+    [title, director, actor, req.files.poster.data]
   );
+  res.redirect('/admin/movie');
 });
 
 router.get('/schedule', (req, res) => {

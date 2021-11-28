@@ -191,11 +191,11 @@ table {
   border-right: 1px solid #d8d8d8;
   border-bottom: 1px solid #e0e0e0;
   table-layout: fixed;
-  border-spacing: 0;
+  border-spacing: 1;
   text-indent: initial;
   margin: 0;
   padding: 0;
-  font-family: "굴림", Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
+  font-family: '굴림', Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
     Sans-serif;
   font-size: 12px;
   color: #000;
@@ -232,7 +232,7 @@ td {
   margin-left: 10px;
   margin: 0;
   padding: 0;
-  font-family: "굴림", Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
+  font-family: '굴림', Gulim, Batang, arial, Verdana, AppleGothic, Tahoma,
     Sans-serif;
   font-size: 12px;
   color: #000;
@@ -255,9 +255,16 @@ button {
   margin-left: 300px;
 }
 
-.quit {
-  margin-left: 1085px;
-  border-top: 10px solid #fffefe;
+.buttonBlock {
+  margin-top: 10px;
+}
+
+.chnbt {
+  float: right;
+}
+
+.chnbt + .chnbt {
+  margin-right: 15px;
 }
 
 .mypage {

@@ -7,7 +7,7 @@ html
   body
     .bgi
       .top-page
-        a(href="/main.html")
+        a(href="/")
           img(src="/image/logo.png", alt="mainImg").style1
         div
           input(type="text", name="search", size="50").search
@@ -22,10 +22,14 @@ html
           .best-item 영화예매
           .best-item 상영스케줄
         .log
-          .best-item
-            a(href="login.html") 로그인 |
-          .best-item
-            a(href="singin.html") 회원가입 |
-          .best-item
-            a(href="mypage.html") 마이페이지
+          if !loggedIn
+            .best-item
+              a(href="/login") 로그인
+            .best-item
+              a(href="/signin") 회원가입
+          if loggedIn
+            .best-item
+              a(href="/logout") 로그아웃
+            .best-item
+              a(href="/mypage") 마이페이지
     block content

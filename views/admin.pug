@@ -33,7 +33,8 @@ block content
         <legend>회원정보</legend>
         <table cellspacing="0">
           <tbody>
-            +userInfo('asdf', 'ㅁㄴㄹ', 'GOLD')
+            each user in users
+              +userInfo(user.아이디, user.회원이름, user.등급)
           </tbody>
         </table>
       </fieldset>
