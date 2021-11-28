@@ -27,6 +27,7 @@
   padding: 10px;
   border: 1px dotted red;
 }
+
 .search {
   float: left;
   width: 553px;
@@ -80,10 +81,9 @@
 .best {
   display: flex;
   float: left;
-  margin: 30px 12px;
+  margin: 0 12px;
   font-size: 16px;
   font-weight: 500;
-  background-color: white;
 }
 .best-item {
   margin-right: 20px;

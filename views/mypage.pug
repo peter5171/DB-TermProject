@@ -1,0 +1,43 @@
+extends layout 
+
+block head
+  link(rel="stylesheet", href="css/shop.css")
+  link(rel="stylesheet", href="css/style.css")
+
+block content
+  .tb-space
+    fieldset
+      legend 회원정보
+      
+      form(method="post")
+        table(cellspacing="0")
+          tbody
+            tr
+              th(scope="row") 이름
+              td
+                input(value="이*재").infor
+            tr
+              th(scope="row") 아이디
+              td
+                input(value="이*재").infor
+            tr
+              th(scope="row") 전화번호
+              td
+                input(value="이*재").infor
+            tr
+              th(scope="row") 카드번호
+              td
+                input(value="이*재").infor
+            tr
+              th(scope="row") 등급
+              td
+                .infor SILVER
+            tr
+              th(scope="row") 할인율
+              td
+                .infor 10%
+        
+        .quit
+          button(type="submit").chnbt 수정
+          button(type="button").chnbt 회원탈퇴
+  .footer
